@@ -4,9 +4,13 @@ const ResultStreaming = ({ data }) => {
   return (
     <div className="bg-gray-100 p-6 rounded shadow mb-4">
       {typeof data === "string" && (
-        <pre className="text-black-500 mb-4">{data}</pre>
+        <pre className="text-black-500 mb-4 whitespace-pre-wrap">{data}</pre>
       )}
-      {data && <p className="text-black-500 mb-4">{data?.output}</p>}
+      {data && (
+        <p className="text-black-500 mb-4 whitespace-pre-wrap">
+          {data?.output}
+        </p>
+      )}
 
       {data &&
         data.sourceDocuments &&
